@@ -14,7 +14,9 @@ class UserType extends EntityRefObjectType {
     {
         parent::__construct([
             'name'      => 'User',
-            'keyFields' => [ 'email' ],
+            'keys' => [
+                [ 'fields' => 'email', 'resolvable' => false ]
+            ],
             'fields'    => [
                 'averageProductsCreatedPerYear' => [
                     'type' => Types::int(),
