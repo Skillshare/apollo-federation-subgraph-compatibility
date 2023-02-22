@@ -3,8 +3,14 @@
     "type": "project",
     "require": {
         "webonyx/graphql-php": "^14.11",
-        "skillshare/apollo-federation-php": "^1.6"
+        "skillshare/apollo-federation-php": "dev-implement_v2"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Aeliot-Tm/apollo-federation-php"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "GraphQL\\Compatibility\\": "src/"
