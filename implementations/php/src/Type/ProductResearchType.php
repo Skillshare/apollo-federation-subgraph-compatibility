@@ -15,7 +15,9 @@ class ProductResearchType extends EntityObjectType {
     {
         parent::__construct([
             'name'   => 'ProductResearch',
-            'keyFields' => ['study { caseNumber }'],
+            'keys' => [
+                ['fields' => 'study { caseNumber }'],
+            ],
             'fields' => [
                 'study' => ['type' => Types::nonNull(Types::caseStudy())],
                 'outcome' => [ 'type' => Types::string() ]

@@ -4,23 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57d55804cbdc320f24d6bc24b7a3e347",
+    "content-hash": "9d77f8a1830d0144a841687779cee486",
     "packages": [
         {
             "name": "skillshare/apollo-federation-php",
-            "version": "v1.6",
+            "version": "dev-implement_v2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Skillshare/apollo-federation-php.git",
-                "reference": "4f958ddb683c1fceb1d162f58a5dc2957e26fe5d"
+                "url": "https://github.com/Aeliot-Tm/apollo-federation-php.git",
+                "reference": "b81878710f0160f96c97ed1f6b8e5ecaa69acd52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Skillshare/apollo-federation-php/zipball/4f958ddb683c1fceb1d162f58a5dc2957e26fe5d",
-                "reference": "4f958ddb683c1fceb1d162f58a5dc2957e26fe5d",
+                "url": "https://api.github.com/repos/Aeliot-Tm/apollo-federation-php/zipball/b81878710f0160f96c97ed1f6b8e5ecaa69acd52",
+                "reference": "b81878710f0160f96c97ed1f6b8e5ecaa69acd52",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "php": "^7.1||^8.0",
                 "webonyx/graphql-php": "^0.13.8 || ^14.0"
             },
@@ -36,16 +37,30 @@
                     "Apollo\\Federation\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Apollo\\Federation\\Tests\\": "test/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "sync": [
+                    "yarn install && composer update"
+                ],
+                "commit": [
+                    "yarn commit"
+                ]
+            },
             "license": [
                 "MIT"
             ],
             "description": "A PHP port of the Apollo Federation specification.",
             "support": {
-                "issues": "https://github.com/Skillshare/apollo-federation-php/issues",
-                "source": "https://github.com/Skillshare/apollo-federation-php/tree/v1.6"
+                "source": "https://github.com/Aeliot-Tm/apollo-federation-php/tree/implement_v2"
             },
-            "time": "2022-08-16T19:05:32+00:00"
+            "time": "2023-02-09T18:39:48+00:00"
         },
         {
             "name": "webonyx/graphql-php",
@@ -117,7 +132,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "skillshare/apollo-federation-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

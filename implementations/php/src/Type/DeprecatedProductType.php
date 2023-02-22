@@ -15,7 +15,9 @@ class DeprecatedProductType extends EntityObjectType {
     {
         parent::__construct([
             'name' => 'DeprecatedProduct',
-            'keyFields' => ['sku package'],
+            'keys' => [
+                ['fields' => 'sku package'],
+            ],
             'fields'    => [
                 'sku'       => [ 'type' => Types::nonNull(Types::string()) ],
                 'package'   => [ 'type' => Types::nonNull(Types::string()) ],
