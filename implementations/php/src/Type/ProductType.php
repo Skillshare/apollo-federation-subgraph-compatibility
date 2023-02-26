@@ -15,7 +15,11 @@ class ProductType extends EntityObjectType {
     {
         parent::__construct([
             'name' => 'Product',
-            'keyFields' => ['id', 'sku package', 'sku variation { id }'],
+            'keys' => [
+                ['fields' => 'id'],
+                ['fields' => 'sku package'],
+                ['fields' => 'sku variation { id }'],
+            ],
             'fields'    => [
                 'id'        => [ 'type' => Types::nonNull(Types::id()) ],
                 'sku'       => [ 'type' => Types::string() ],
